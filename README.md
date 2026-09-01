@@ -2,7 +2,7 @@ Humans get better with every time they do mistakes and understand new things
 But this ability is is not just limited to humans only, I wanted to make my claude supercharged in learning and improving and that is the reason I Have created it 
 Just use this skill and it will help your Claude for making things much better and become much more sharper with every step forward
 
-##Below this everything is written by Claude so if you want you can read this as well but I think you would get a good idea by reading the above content
+Below this everything is written by Claude so if you want you can read this as well but I think you would get a good idea by reading the above content
 A Claude Skill that front-loads clarifying questions, kills padded output, and locks in corrections as standing rules  so every response gets sharper instead of repeating the same mistakes.
 # Getting Better
 
