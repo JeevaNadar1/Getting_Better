@@ -1,0 +1,20 @@
+# Normalise line endings so the validator and bundle are byte-stable across platforms.
+* text=auto eol=lf
+
+*.md      text eol=lf
+*.py      text eol=lf
+*.yml     text eol=lf
+*.yaml    text eol=lf
+Makefile  text eol=lf
+LICENSE   text eol=lf
+
+# Makefiles require literal tabs; never let a filter touch them.
+Makefile  -filter -diff
+
+# Build artefacts are binary and excluded from language statistics.
+*.skill   binary
+dist/**   linguist-generated=true
+
+# This is a specification repository, not a Python project.
+scripts/** linguist-vendored=false
+*.md      linguist-detectable=true

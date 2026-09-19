@@ -56,12 +56,15 @@ protocol.
 ## Install
 
 **Claude.ai / Claude Desktop** — download `getting-better.skill` from the
-[latest release](https://github.com/JeevaNadar1/Getting_Better/releases), then upload it in
-Settings → Capabilities → Skills.
+[latest release](https://github.com/JeevaNadar1/Getting_Better/releases/latest), then
+upload it in Settings → Capabilities → Skills.
 
-To build the bundle from source:
+If no release is published yet, build the bundle from source — it produces the identical
+artefact:
 
 ```bash
+git clone https://github.com/JeevaNadar1/Getting_Better.git
+cd Getting_Better
 make bundle          # writes dist/getting-better.skill
 ```
 
@@ -93,14 +96,33 @@ is self-contained, so this works without modification.
 ```
 getting-better/
 ├── SKILL.md                      the complete protocol, self-contained
+├── README.md                     this file
+├── CONTRIBUTING.md               invariants, review bar, release procedure
+├── CHANGELOG.md                  version history, Keep a Changelog format
+├── CODE_OF_CONDUCT.md            conduct standards and reporting route
 ├── LICENSE                       MIT
-├── Makefile                      make bundle / make check / make clean
-├── scripts/check_skill.py        frontmatter, naming and anchor validation
-└── .github/workflows/ci.yml      runs the validator and the bundle check
+├── Makefile                      check / bundle / release-check / version
+├── .gitattributes                LF normalisation, language statistics
+├── scripts/check_skill.py        structural and drift validation
+└── .github/
+    ├── workflows/ci.yml          validates, bundles, publishes tagged releases
+    ├── PULL_REQUEST_TEMPLATE.md  evidence checklist for protocol changes
+    └── ISSUE_TEMPLATE/           bug report and feature request forms
 ```
 
 `SKILL.md` is currently a single self-contained file. It uploads to Claude as-is and reads
 as documentation in the repository.
+
+---
+
+## Contributing
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) first. The short version: `make check` must pass,
+`SKILL.md` edits need before/after behavioural evidence in the PR, and because the file is
+loaded in full on every trigger, additions are weighed against their permanent token cost.
+
+Conduct standards are in [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Version history is in
+[CHANGELOG.md](CHANGELOG.md).
 
 ---
 
